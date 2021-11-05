@@ -1,0 +1,18 @@
+name: 'Ping on PR'
+description: 'Ping a group chat when a PR is assigned to a review team'
+inputs:
+  review-teams-and-channels:
+    description: 'JSON object of review team slugs to channel hashtags.'
+    required: true
+  channel:
+    description: 'Channel to send the ping to.'
+    required: true
+  api-key:
+    description: 'Dialpad API key.'
+    required: true
+  user-id:
+    description: 'User ID to send the ping from.'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
