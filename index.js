@@ -9,7 +9,7 @@ const run = async () => {
 	const userId = core.getInput('user-id');
 
 	// 0. Verify that the action type is review requested.
-	if (github.context.github.context.payload.action != 'review_requested') {
+	if (github.context.payload.action != 'review_requested') {
 		console.log("Action type was not review requested. Ignoring.");
 		return;
 	}
